@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dietista Realista</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: ivory;
+        }
+
+        .header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(255, 239, 239);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff0482;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ff0482;
+            margin-bottom: 30px;
+        }
+
+        .location-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .location-title {
+            color: #ff0482;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .location-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-info {
+            flex: 1;
+            min-width: 300px;
+            color: #ff0482;
+        }
+
+        .location-map {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff0482;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff4da6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Dietista Realista</h1>
+            <p class="subtitle">Maria de los Ángeles Martín Gutiérrez</p>
+            <a href="#location" class="button">Descubre Más</a>
+        </div>
+    </div>
+
+    <section id="location" class="location-section">
+        <h2 class="location-title">Nuestra Ubicación</h2>
+        <div class="location-content">
+            <div class="location-info">
+                <h3>Encuéntranos en</h3>
+                <div class="contact-info">
+                    <p>Av. Pablo Garnica, 37, 45662 Alcaudete de la Jara, Toledo</p>                    
+                    <p>Teléfono: 613 82 27 14</p>
+                    <p>Email: soyunadietiestarealista@gmail.com</p>
+                </div>
+                <a href="#" class="button">Cómo Llegar</a>
+            </div>
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d442.7364957167474!2d-4.870338544920754!3d39.792701684324115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6aa59e7f1b9ffd%3A0x145cf5fd6f59f364!2sDIETISTA%20REALISTA%20-%20Nutricionista%20Toledo!5e0!3m2!1ses!2ses!4v1737385811996!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Aquí podrías integrar un mapa real usando Google Maps o similar -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>
