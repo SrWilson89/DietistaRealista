@@ -3,222 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dietista Realista - María de los Ángeles Martín</title>
-    <link rel="icon" href="LOGO DIETISTA REALISTA.PNG">
+    <title>Dietista Realista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: ivory;
-            color: #FF1493;
+            font-size: clamp(12px, 2.5vw, 24px); /* Responsive font size: min 12px, max 24px */
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: rgba(255, 20, 147, 0.1);
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .info-section {
-            flex: 1;
-            min-width: 300px;
-            padding: 15px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .info-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .services {
-            background-color: rgba(255, 20, 147, 0.05);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .contact {
-            background-color: rgba(255, 20, 147, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-        }
-        .contact a {
-            color: #FF1493;
-            text-decoration: none;
-        }
-        footer {
-            background-color: #FF1493;
-            color: ivory;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        .dark-mode header {
-            background-color: rgba(255, 20, 147, 0.2);
-        }
-        .dark-mode .services {
-            background-color: rgba(255, 20, 147, 0.1);
-        }
-        .dark-mode .contact {
-            background-color: rgba(255, 20, 147, 0.2);
-        }
-        .dark-mode footer {
-            background-color: #FF1493;
-            color: ivory;
-        }
-        .dark-mode .contact a {
-            color: #FF69B4;
-        }
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #FF1493;
-            color: ivory;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .dark-mode-toggle:hover {
-            background-color: #FF69B4;
-        }
+        .bg-pink-600 { background-color: #db2777; }
+        .text-pink-600 { color: #db2777; }
+        .hover\:text-pink-700:hover { color: #be185d; }
         .visitor-counter {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #DE9AE5;
-            color: ivory;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-        @media screen and (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            .info-section {
-                flex: 100%;
-            }
+            bottom: 10px;
+            right: 10px;
+            background-color: #DF9BE7; /* Pink background */
+            padding: 20px;
+            color: white;
+            font-size: 24px !important;
+            z-index: 1000;
+            border-radius: 8px; /* Rounded borders */
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Modo Oscuro</button>
+<body class="bg-gray-100 font-sans text-gray-800">
+    <header class="bg-pink-600 text-white text-center py-6">
+        <h1 class="text-3xl font-bold">Dietista Realista</h1>
+        <p class="text-lg mt-2">María de los Ángeles Martín Gutiérrez</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <!-- Modo Oscuro -->
+        <div class="mb-6">
+            <button id="darkModeToggle" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Modo Oscuro</button>
+        </div>
+
+        <!-- Contador de visitas -->
         <span class="visitor-counter">
             <script type="text/javascript" src="https://contador.websiteout.com/js/30/5/0/0"></script>
-        </span> 
-        <header>
-            <h1>Dietista Realista</h1>
-            <h2>María de los Ángeles Martín Gutiérrez</h2>
-        </header>
+        </span>
 
-        <div class="main-content">
-            <div class="info-section">
-                <h3>Sobre Mí</h3>
-                <p>Con 15 años de experiencia, me especializo en pérdida de peso y educación alimentaria.</p>
-                <p>Mi visión se basa en una promoción de salud alejada de dietas milagro, respetando la tradición mediterránea.</p>
-            </div>
+        <!-- Sobre Mí -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">Sobre Mí</h2>
+            <p>Con 15 años de experiencia, me especializo en pérdida de peso y educación alimentaria.</p>
+            <p class="mt-2">Mi visión se basa en una promoción de salud alejada de dietas milagro, respetando la tradición mediterránea.</p>
+        </section>
 
-            <div class="info-section">
-                <div class="services">
-                    <h3>Servicios</h3>
-                    <ul>
-                        <li>Diagnóstico integral</li>
-                        <li>Planes de alimentación personalizados</li>
-                        <li>Seguimiento continuo</li>
-                        <li>Educación nutricional</li>
-                        <li>Toma de medidas corporales</li>
-                        <li>Definición de objetivos</li>
-                        <li>Control de peso</li>
-                        <li>Promoción de la salud</li>
-                        <li><b>Consultas telefónicas</b></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <!-- Servicios -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">Servicios</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                <li>Diagnóstico integral</li>
+                <li>Planes de alimentación personalizados</li>
+                <li>Seguimiento continuo</li>
+                <li>Educación nutricional</li>
+                <li>Toma de medidas corporales</li>
+                <li>Definición de objetivos</li>
+                <li>Control de peso</li>
+                <li>Promoción de la salud</li>
+                <li>Consultas telefónicas</li>
+            </ul>
+        </section>
 
-        <div class="contact">
-            <h3>Contacto</h3>
-            <p>Email: <a href="mailto:soyunadietistarealista@gmail.com">soyunadietistarealista@gmail.com</a></p>
-            <p>Teléfono: <a href="tel:+34613822714">+34 613 82 27 14</a></p>
-        </div>
+        <!-- Contacto -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">Contacto</h2>
+            <p>Email: <a href="mailto:soyuna dietistarealista@gmail.com" class="text-pink-600 hover:text-pink-700">soyuna dietistarealista@gmail.com</a></p>
+            <p>Teléfono: <a href="tel:+34613822714" class="text-pink-600 hover:text-pink-700">+34 618 82 27 14</a></p>
+        </section>
 
-        <div class="services">
-            <h3>Tarifas</h3>
-            <p>Consulta Inicial: <strong>20 euros</strong></p>
-            <p>Revisiones: <strong>10 euros</strong></p>
-        </div>
+        <!-- Tarifas -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">Tarifas</h2>
+            <p>Consulta Inicial: 20 euros</p>
+            <p>Revisiones: 10 euros</p>
+        </section>
 
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1083.8675651253914!2d-4.869986545194691!3d39.792624263175846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6aa59e7f1b9ffd%3A0x145cf5fd6f59f364!2sDIETISTA%20REALISTA%20-%20Nutricionista%20Toledo!5e0!3m2!1ses!2ses!4v1737817793387!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <!-- Mapa -->
+        <section class="my-8">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">Ubicación</h2>
+            <iframe
+                class="w-full h-64 border-0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1083.8675651253914!2d-4.869986545194691!3d39.792624263175846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6aa59e7f1b9ffd%3A0x145cf5fd6f59f364!2sDIETISTA%20REALISTA%20-%20Nutricionista%20Toledo!5e0!3m2!1ses!2ses!4v1737817793387!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>>
+    </main>
 
-        <footer>
-            <p>© 2024 Dietista Realista - María de los Ángeles Martín</p>
-        </footer>
-    </div>
+    <footer class="bg-pink-600 text-white text-center py-4">
+        <p>© 2025 Dietista Realista - María de los Ángeles Martín</p>
+    </footer>
 
     <script>
-        // Contador de visitas
-        if (localStorage.getItem('visits')) {
-            let visits = parseInt(localStorage.getItem('visits')) + 1;
-            localStorage.setItem('visits', visits);
-            document.getElementById('visitor-counter').innerText = 'Visitas: ' + visits;
-        } else {
-            localStorage.setItem('visits', 1);
-            document.getElementById('visitor-counter').innerText = 'Visitas: 1';
-        }
+        const toggleButton = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
 
-        // Modo oscuro/claro
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const button = document.querySelector('.dark-mode-toggle');
-            if (document.body.classList.contains('dark-mode')) {
-                button.innerText = 'Modo Claro';
+        toggleButton.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                toggleButton.textContent = 'Modo Claro';
+                document.body.classList.remove('bg-gray-100', 'text-gray-800');
+                document.body.classList.add('bg-gray-900', 'text-white');
             } else {
-                button.innerText = 'Modo Oscuro';
+                toggleButton.textContent = 'Modo Oscuro';
+                document.body.classList.remove('bg-gray-900', 'text-white');
+                document.body.classList.add('bg-gray-100', 'text-gray-800');
             }
-        }
-
-        // Efecto de aparición al hacer scroll
-        const sections = document.querySelectorAll('.info-section');
-        const options = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, options);
-
-        sections.forEach(section => {
-            observer.observe(section);
         });
     </script>
-</body>
-</html>
