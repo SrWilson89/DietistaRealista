@@ -7,8 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-size: clamp(12px, 2.5vw, 24px);
-            transition: background-color 0.3s, color 0.3s;
+            font-size: clamp(12px, 2.5vw, 24px); /* Responsive font size: min 12px, max 24px */
         }
         .bg-pink-600 { background-color: #db2777; }
         .text-pink-600 { color: #db2777; }
@@ -17,53 +16,25 @@
             position: fixed;
             bottom: 10px;
             right: 10px;
-            background-color: #DF9BE7;
+            background-color: #DF9BE7; /* Pink background */
             padding: 20px;
             color: white;
             font-size: 24px !important;
             z-index: 1000;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px; /* Rounded borders */
         }
-
-        /* === EFECTOS DE SCROLL === */
-        .scroll-fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .scroll-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Modo oscuro */
-        .dark .bg-gray-100 { background-color: #1a1a1a; }
-        .dark .text-gray-800 { color: #f3f4f6; }
     </style>
 </head>
 <body class="bg-gray-100 font-sans text-gray-800">
-<header class="bg-pink-600 text-white text-center py-6 relative">
-    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div class="text-center sm:text-left">
-            <h1 class="text-3xl font-bold">Dietista Realista</h1>
-            <p class="text-lg mt-1">María de los Ángeles Martín Gutiérrez</p>
-        </div>
-        <a href="https://srwilson89.github.io/Semanal/" 
-           target="_blank" 
-           class="inline-flex items-center gap-2 bg-white text-pink-600 font-semibold px-5 py-2 rounded-full hover:bg-pink-50 transition-all shadow-md hover:shadow-lg transform hover:scale-105">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Planificador Semanal
-        </a>
-    </div>
-</header>
+    <header class="bg-pink-600 text-white text-center py-6">
+        <h1 class="text-3xl font-bold">Dietista Realista</h1>
+        <p class="text-lg mt-2">María de los Ángeles Martín Gutiérrez</p>
+    </header>
 
     <main class="max-w-4xl mx-auto p-6">
         <!-- Modo Oscuro -->
         <div class="mb-6">
-            <button id="darkModeToggle" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors">Modo Oscuro</button>
+            <button id="darkModeToggle" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Modo Oscuro</button>
         </div>
 
         <!-- Contador de visitas -->
@@ -72,14 +43,14 @@
         </span>
 
         <!-- Sobre Mí -->
-        <section class="my-12 scroll-fade">
+        <section class="my-8">
             <h2 class="text-2xl font-semibold text-pink-600 mb-4">Sobre Mí</h2>
             <p>Con 15 años de experiencia, me especializo en pérdida de peso y educación alimentaria.</p>
             <p class="mt-2">Mi visión se basa en una promoción de salud alejada de dietas milagro, respetando la tradición mediterránea.</p>
         </section>
 
         <!-- Servicios -->
-        <section class="my-12 scroll-fade">
+        <section class="my-8">
             <h2 class="text-2xl font-semibold text-pink-600 mb-4">Servicios</h2>
             <ul class="list-disc pl-6 space-y-2">
                 <li>Diagnóstico integral</li>
@@ -95,30 +66,30 @@
         </section>
 
         <!-- Contacto -->
-        <section class="my-12 scroll-fade">
+        <section class="my-8">
             <h2 class="text-2xl font-semibold text-pink-600 mb-4">Contacto</h2>
             <p>Email: <a href="mailto:soyunadietistarealista@gmail.com" class="text-pink-600 hover:text-pink-700">soyunadietistarealista@gmail.com</a></p>
             <p>Teléfono: <a href="tel:+34613822714" class="text-pink-600 hover:text-pink-700">+34 618 82 27 14</a></p>
         </section>
 
         <!-- Tarifas -->
-        <section class="my-12 scroll-fade">
+        <section class="my-8">
             <h2 class="text-2xl font-semibold text-pink-600 mb-4">Tarifas</h2>
             <p>Consulta Inicial: 20 euros</p>
             <p>Revisiones: 10 euros</p>
         </section>
 
         <!-- Mapa -->
-        <section class="my-12 scroll-fade">
+        <section class="my-8">
             <h2 class="text-2xl font-semibold text-pink-600 mb-4">Ubicación</h2>
             <iframe
-                class="w-full h-64 border-0 rounded-lg shadow-md"
+                class="w-full h-64 border-0"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1083.8675651253914!2d-4.869986545194691!3d39.792624263175846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6aa59e7f1b9ffd%3A0x145cf5fd6f59f364!2sDIETISTA%20REALISTA%20-%20Nutricionista%20Toledo!5e0!3m2!1ses!2ses!4v1737817793387!5m2!1ses!2ses"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-        </section>
+        </section>>
     </main>
 
     <footer class="bg-pink-600 text-white text-center py-4">
@@ -126,7 +97,6 @@
     </footer>
 
     <script>
-        // === MODO OSCURO ===
         const toggleButton = document.getElementById('darkModeToggle');
         const html = document.documentElement;
 
@@ -134,29 +104,12 @@
             html.classList.toggle('dark');
             if (html.classList.contains('dark')) {
                 toggleButton.textContent = 'Modo Claro';
+                document.body.classList.remove('bg-gray-100', 'text-gray-800');
+                document.body.classList.add('bg-gray-900', 'text-white');
             } else {
                 toggleButton.textContent = 'Modo Oscuro';
+                document.body.classList.remove('bg-gray-900', 'text-white');
+                document.body.classList.add('bg-gray-100', 'text-gray-800');
             }
         });
-
-        // === EFECTO SCROLL ===
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Solo una vez
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-fade').forEach(section => {
-            observer.observe(section);
-        });
     </script>
-</body>
-</html>
